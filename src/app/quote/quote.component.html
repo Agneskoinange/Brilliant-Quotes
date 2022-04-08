@@ -3,8 +3,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6"></div>
+        <ul *ngFor="let quote of Quotes">
+            <li>{{quote.quote}} <span> {{quote.author}} </span> <span>{{quote.upvotes}}</span>  <span>{{quote.downvotes}}</span></li>
 
-        
+        </ul>
+
+
         <div class="col-md-6"></div>
     </div>
 

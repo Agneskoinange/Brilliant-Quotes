@@ -9,8 +9,8 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
 
-  quotes:Quote [] = [
-    new Quote(1, "First Quote", "author", 0, 0),
+  Quotes:Quote [] = [
+    new Quote(1, "First Quote", "author", 0, 0,),
     new Quote(1, "First Quote", "author", 0, 0),
     new Quote(1, "First Quote", "author", 0, 0),
     new Quote(1, "First Quote", "author", 0, 0),
