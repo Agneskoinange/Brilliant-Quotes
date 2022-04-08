@@ -1,5 +1,16 @@
 <h1>My Quotes</h1>
-<ul *ngFor="let quote of Quotes">
-    <li>{{quote.quote}} <span class="text-primary ml-2 "> {{quote.author}} </span> <span>{{quote.upvotes}}</span>  <span class="text-warning ml-3">{{quote.downvotes}}</span></li>
+<ul *ngFor= "let quote of Quotes">
+
+ <div *ngIf ="quote.upvotes == highest && quote.upvotes>0; then highlight else empty"></div>
+     
+     <ng-template #highlight> 
+        <li appHighlight>{{quote.quote}}<span class="text-primary ml-2 ">Author: {{quote.author}} </span> <span>Upvotes: {{quote.upvotes}}</span> <span class="text-warning ml-3">Downvotes: {{quote.downvotes}}</span></li>
+     </ng-template>
+     
+     <ng-template #empty>
+        <li> {{quote.quote}} <span class="text-primary ml-2 ">Auther: {{quote.author}} </span> <span>Upvotes: {{quote.upvotes}}</span> <span class="text-warning ml-3">Downvotes: {{quote.downvotes}}</span></li>
+
+     </ng-template>
+ 
 </ul>
 
