@@ -2,7 +2,7 @@ export class Quote {
     
     showDescription: boolean;
 
-  constructor(
+   constructor(
 
     public id: number,
     public quote: string,
