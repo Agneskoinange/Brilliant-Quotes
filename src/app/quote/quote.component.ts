@@ -46,8 +46,8 @@ export class QuoteComponent implements OnInit {
     }
   }
 
-  // arr: number[] = this.Quotes.map(Quote=>Quote.upvotes)
-  // highest=Math.max(...this.arr)
+  arr: number[] = this.Quotes.map(Quote=>Quote.upvotes)
+  highest=Math.max(...this.arr)
 
   constructor() { }
 
