@@ -6,28 +6,30 @@
    <div class="row">
        <div class="col-md-6">
            <div *ngFor='let quote of Quotes, let i = index;'>
-               <div class="card" >
-                  
+               <div class="card">
                    <div >
                        <div class="row">
-                           <div class="col-md-6">
+                           <div class="col-md-4">
                                <h5 id={{i}}>{{quote.quote}}</h5>
-                               Quote Posted <span >{{ quote.postDate|date }} days </span>ago.
-                           </div>
-                           <div class="col-md-6">
+                               Quote Posted <span >{{ quote.postDate|dateCount }} days </span>Ago.
+                     
                                <button class="btn btn-primary" id="vote" (click)='toggleDetails(i)'>See More</button>
                            </div>
+                           
+                              
+                           
                        </div>
                    </div>
 
                    <div >
                        <div appHighlight> {{quote.description }} </div>
-                       <div class="voter">
+                       <div>
                        </div>
                        <div id="yourname1">
-                           Posted by: ~ <span id="yourname"> {{ quote.yourname}} </span> On:~ <span> {{quote.postDate | date}} </span>
+                           Posted by: ~ <span id="yourname"> {{ quote.yourname}} </span> On:~ <span> {{quote.postDate|date}} </span>
                            <div id="author">
-                               <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isSeen)='deleteQuote($event,i)'>
+                              
+                               <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isUpVoted)='deleteQuote($event,i)'>
                                </app-quote-detail>
                            </div>
                        </div>
@@ -35,7 +37,7 @@
                </div>
            </div>
        </div>
-       <div class="col-md-6" id="quoteform">
+       <div class="col-md-4" id="quoteform">
            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
        </div>
    </div>
