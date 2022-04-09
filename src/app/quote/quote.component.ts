@@ -32,22 +32,22 @@ export class QuoteComponent implements OnInit {
   addNewQuote(quote: any) {
     let quoteLength = this.Quotes.length;
     quote.id = quoteLength + 1;
+    quote.postDate = new Date(quote.postDate)
     this.Quotes.push(quote);
   }
 
   deleteQuote(isSeen: any, index: any) {
     if (isSeen) {
-      let toDelete = confirm(`Are you sure you want to delete Quote about  ${this.Quotes[index].quote} ? `)
+      let toDelete = confirm(`confirm you want to delete  ${this.Quotes[index].quote} .`)
 
       if (toDelete) {
         this.Quotes.splice(index, 1);
       }
     }
   }
+
   // arr: number[] = this.Quotes.map(Quote=>Quote.upvotes)
   // highest=Math.max(...this.arr)
-
-
 
   constructor() { }
 
