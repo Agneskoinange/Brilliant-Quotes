@@ -1,5 +1,5 @@
-import { Quote } from '@angular/compiler';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Quote } from 'src/app/quote';
 
 @Component({
   selector: 'app-quote-detail',
@@ -30,13 +30,3 @@ export class QuoteDetailComponent implements OnInit {
   }
 
 }
-
-Monitoring tools
-Grafana
-Prometheus
-Sentry
-TICK stack
-
-Python,,, its libraries (fabric)
-Ansible
-Cloud- server and serverless
