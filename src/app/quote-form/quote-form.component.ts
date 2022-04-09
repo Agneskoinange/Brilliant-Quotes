@@ -8,12 +8,12 @@ import { Quote } from '../quote';
 })
 export class QuoteFormComponent implements OnInit {
 
-  newQuote = new Quote(0, "", "", "", "", new Date, 0, 0);
+  newQuote = new Quote(0, "", "", "", "", 0, 0, new Date);
   @Output() addQuote = new EventEmitter<Quote>(); 
 
-   submitQuote(){
+   submitQuote() {
   let me =  this.addQuote.emit(this.newQuote);
-  alert('Great! Thanks for adding a new Quote. Check below to see your amazing Quote!')
+  alert('Nice Quote!')
   }
   
 

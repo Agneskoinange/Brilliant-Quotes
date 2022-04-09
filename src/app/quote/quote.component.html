@@ -4,29 +4,30 @@
    <h4>Brilliant Quotes</h4>
 
    <div class="row">
-       <div class="col-md-6" id="mycards">
+       <div class="col-md-6">
            <div *ngFor='let quote of Quotes, let i = index;'>
-               <div class="card bg-light mb-3" style="max-width: 38rem;">
-                   <div class="card-header">
+               <div class="card" >
+                  
+                   <div >
                        <div class="row">
                            <div class="col-md-6">
                                <h5 id={{i}}>{{quote.quote}}</h5>
-                               Quote Posted <span id="date_posted">{{ quote.postDate|date }} Days </span>Ago.
+                               Quote Posted <span >{{ quote.postDate|date }} Days </span>Ago.
                            </div>
                            <div class="col-md-6">
-                               <button class="btn btn-primary" id="vote" (click)='toggleDetails(i)'>Expand</button>
+                               <button class="btn btn-primary" id="vote" (click)='toggleDetails(i)'>See More</button>
                            </div>
                        </div>
                    </div>
-                   <div class="card-body">
-                       <div class="card-title" appHighlight> {{quote.description }} </div>
+
+                   <div >
+                       <div appHighlight> {{quote.description }} </div>
                        <div class="voter">
                        </div>
-                       <div class="card-text" id="yourname1">
-                           Presented By: ~ <span id="yourname"> {{ quote.yourname}} </span> On:~ <span id="date_posted">
-               {{quote.postDate | date}} </span>
+                       <div id="yourname1">
+                           Posted by: ~ <span id="yourname"> {{ quote.yourname}} </span> On:~ <span> {{quote.postDate | date}} </span>
                            <div id="author">
-                               <app-quote-detail *ngIf='quote.showDescription' [quote]='Quotes' (isSeen)='deleteQuote($event,i)'>
+                               <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isSeen)='deleteQuote($event,i)'>
                                </app-quote-detail>
                            </div>
                        </div>
@@ -34,7 +35,7 @@
                </div>
            </div>
        </div>
-       <div class="col-md-6" id="formquote">
+       <div class="col-md-6" id="quoteform">
            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
        </div>
    </div>
