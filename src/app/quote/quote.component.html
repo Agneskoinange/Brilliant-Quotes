@@ -1,5 +1,5 @@
 
-< class="container">
+<div class="container">
    
    <h4>Brilliant Quotes</h4>
 
@@ -11,7 +11,7 @@
                        <div class="row">
                            <div class="col-md-6">
                                <h5 id={{i}}>{{quote.quote}}</h5>
-                               Quote Posted <span id="date_posted">{{ quote.postDate|dateCount }} Days </span>Ago.
+                               Quote Posted <span id="date_posted">{{ quote.postDate|date }} Days </span>Ago.
                            </div>
                            <div class="col-md-6">
                                <button class="btn btn-primary" id="vote" (click)='toggleDetails(i)'>Expand</button>
@@ -22,8 +22,8 @@
                        <div class="card-title" appHighlight> {{quote.description }} </div>
                        <div class="voter">
                        </div>
-                       <div class="card-text" id="submitter">
-                           Presented By: ~ <span id="submittern"> {{ quote.yourname}} </span> On:~ <span id="date_posted">
+                       <div class="card-text" id="yourname1">
+                           Presented By: ~ <span id="yourname"> {{ quote.yourname}} </span> On:~ <span id="date_posted">
                {{quote.postDate | date}} </span>
                            <div id="author">
                                <app-quote-detail *ngIf='quote.showDescription' [quote]='Quotes' (isSeen)='deleteQuote($event,i)'>
