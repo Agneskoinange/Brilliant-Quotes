@@ -11,8 +11,6 @@ export class QuoteComponent implements OnInit {
 
   Quotes:Quote [] = [
 
-    quotes: Quote[] = [
-
       new Quote(1, 'Postivity', 'Miracles happen to those who believe in them."', ' – Bernhard Berenson', 'Agnes', 0, 0, new Date(2022, 3, 17)),
   
       new Quote(2, 'Happiness', '"Happiness is when what you think, what you say, and what you do are in harmony."', '– Mahatma Gandhi', 'Koinange`', 0, 0, new Date(2022, 3, 20)),
@@ -26,11 +24,25 @@ export class QuoteComponent implements OnInit {
       new Quote(6, 'Coding', ' “Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.”', '– Dan Salomon', 'Mary',  0, 0, new Date(2021, 9, 2022)),
     ];
 
-    
-  ];
  
   toggleDetails(index: any) {
     this.Quotes[index].showDescription = !this.Quotes[index].showDescription;
+  }
+
+  addNewQuote(quote: any) {
+    let quoteLength = this.Quotes.length;
+    quote.id = quoteLength + 1;
+    this.Quotes.push(quote);
+  }
+
+  deleteQuote(isSeen: any, index: any) {
+    if (isSeen) {
+      let toDelete = confirm(`Are you sure you want to delete Quote about  ${this.Quotes[index].quote} ? `)
+
+      if (toDelete) {
+        this.Quotes.splice(index, 1);
+      }
+    }
 
   // arr: number[] = this.Quotes.map(Quote=>Quote.upvotes)
   // highest=Math.max(...this.arr)
