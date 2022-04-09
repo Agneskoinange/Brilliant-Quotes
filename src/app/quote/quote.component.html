@@ -23,10 +23,10 @@
                        <div class="voter">
                        </div>
                        <div class="card-text" id="submitter">
-                           Presented By: ~ <span id="submittern"> {{ quote.submit_by }} </span> On:~ <span id="date_posted">
+                           Presented By: ~ <span id="submittern"> {{ quote.yourname}} </span> On:~ <span id="date_posted">
                {{quote.postDate | date}} </span>
                            <div id="author">
-                               <app-quote-detail *ngIf='quote.showDetails' [quote]='quote' (isSeen)='deleteQuote($event,i)'>
+                               <app-quote-detail *ngIf='quote.showDescription' [quote]='Quotes' (isSeen)='deleteQuote($event,i)'>
                                </app-quote-detail>
                            </div>
                        </div>
