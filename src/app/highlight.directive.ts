@@ -8,6 +8,7 @@ export class HighlightDirective {
 
   constructor (private elem: ElementRef ) { 
   }
+  
     @HostListener("click") maxupvotes() {
       this.quote_highlight("purple")
     }
@@ -16,4 +17,5 @@ export class HighlightDirective {
     private quote_highlight(action:string){
       this.elem.nativeElement.style.color=action;
     }
+
 }
