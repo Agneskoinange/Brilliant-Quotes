@@ -10,8 +10,8 @@ import { Quote } from 'src/app/quote';
 export class QuoteDetailComponent implements OnInit {
 
   @Input() quote!: Quote;
-  @Output() isLike = new EventEmitter <boolean>();
-  @Output() isSeen = new EventEmitter<boolean>();
+  @Output() isUpVote = new EventEmitter <boolean>();
+  @Output() isUpVoted = new EventEmitter<boolean>();
 
   upVote(){
     this.quote.upvotes+=1;
@@ -21,8 +21,8 @@ export class QuoteDetailComponent implements OnInit {
     this.quote.downvotes+=1;
   }
 
-  quoteDelete (seen:boolean) {
-    this.isSeen.emit(seen);
+  quoteDelete (UpVoted:boolean) {
+    this.isUpVoted.emit(UpVoted);
   }
 
   constructor() { }
