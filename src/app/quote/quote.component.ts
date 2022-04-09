@@ -43,7 +43,7 @@ export class QuoteComponent implements OnInit {
         this.Quotes.splice(index, 1);
       }
     }
-
+  }
   // arr: number[] = this.Quotes.map(Quote=>Quote.upvotes)
   // highest=Math.max(...this.arr)
 
