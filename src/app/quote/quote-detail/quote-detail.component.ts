@@ -1,5 +1,5 @@
 import { Quote } from '@angular/compiler';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-quote-detail',
@@ -9,6 +9,20 @@ import { Component, OnInit, Input } from '@angular/core';
 export class QuoteDetailComponent implements OnInit {
 
   @Input() quote!: Quote;
+  @Output() isLike = new EventEmitter <boolean>();
+  @Output() isSeen = new EventEmitter<boolean>();
+
+  upVote(){
+    this.quote.upvotes+=1;
+  }
+
+  downVote () {
+    this.quote.downvotes+=1;
+  }
+
+  quoteDelete (seen:boolean) {
+    this.isSeen.emit(seen);
+  }
 
   constructor() { }
 
@@ -16,3 +30,13 @@ export class QuoteDetailComponent implements OnInit {
   }
 
 }
+
+Monitoring tools
+Grafana
+Prometheus
+Sentry
+TICK stack
+
+Python,,, its libraries (fabric)
+Ansible
+Cloud- server and serverless
