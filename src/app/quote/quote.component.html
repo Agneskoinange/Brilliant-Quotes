@@ -1,10 +1,10 @@
 
 <div class="container-fluid">
    
-   <h4>Brilliant Quotes</h4>
+   <h4 style="margin-top: 10px; padding-top:10px; text-align: center; ">Brilliant Quotes</h4>
 
    <div class="row">
-       <div class="col-md-8">
+       <div class="col-sm-6">
            <div *ngFor='let quote of Quotes, let i = index;'>
                <div class="card">
                    <div >
@@ -16,8 +16,7 @@
                            <div>
                                <button class="btn btn-primary" id="vote" (click)='toggleDetails(i)'>See More</button>
                            </div>
-
-                           </div><br>
+                        </div><br>
             
                        </div>
                    </div>
@@ -38,7 +37,7 @@
                </div><br>
            </div>
        </div>
-       <div class="col-md-4" id="quoteform">
+       <div class="col-sm-4" id="quoteform">
            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
        </div>
    </div>
