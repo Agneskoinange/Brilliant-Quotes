@@ -12,7 +12,7 @@ export class QuoteComponent implements OnInit {
   Quotes:Quote [] = [
 
     quotes: Quote[] = [
-      
+
       new Quote(1, 'Postivity', 'Miracles happen to those who believe in them."', ' – Bernhard Berenson', 'Agnes', 0, 0, new Date(2022, 3, 17)),
   
       new Quote(2, 'Happiness', '"Happiness is when what you think, what you say, and what you do are in harmony."', '– Mahatma Gandhi', 'Koinange`', 0, 0, new Date(2022, 3, 20)),
@@ -28,6 +28,9 @@ export class QuoteComponent implements OnInit {
 
     
   ];
+ 
+  toggleDetails(index: any) {
+    this.Quotes[index].showDescription = !this.Quotes[index].showDescription;
 
   // arr: number[] = this.Quotes.map(Quote=>Quote.upvotes)
   // highest=Math.max(...this.arr)

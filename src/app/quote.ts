@@ -1,4 +1,5 @@
 export class Quote {
+  [x: string]: any;
     
     showDescription: boolean;
 
