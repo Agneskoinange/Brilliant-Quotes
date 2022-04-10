@@ -9,10 +9,19 @@
                <div class="">
                   <div class="card" >
                      <div class="" >
-                          <h5 id={{i}}>{{quote.quote}}</h5>
-                                                 
-                         <div>
-                             <div appHighlight> {{quote.description}} </div>
+                        <div *ngIf="quote.upvotes == highvotes() && quote.upvotes >0; then  highlight else empty"></div>
+                          <ng-template #highlight>
+                           <h5 id={{i}} appHighlight>{{quote.quote}}</h5>
+                           <p appHighlight> {{quote.description}} </p>
+                          </ng-template>
+
+                          <ng-template #empty>
+                           <h5 id={{i}} >{{quote.quote}}</h5>
+                           <p> {{quote.description}} </p>
+                          </ng-template>
+                                              
+                          <div>
+                            
                              <div id="author">
                                  <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isUpVoted)='deleteQuote($event,i)'>
                                  </app-quote-detail>
