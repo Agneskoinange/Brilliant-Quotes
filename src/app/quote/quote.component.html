@@ -2,21 +2,24 @@
 <div class="container-fluid">
    
    <h4 style="margin-top: 10px; padding-top:10px; text-align: center; ">Brilliant Quotes</h4>
+   <hr>
 
    <div class="row card-body ">
        <div class="col-md-7 h-50">
             <div *ngFor='let quote of Quotes, let i = index;'>
                <div class="">
+                  
                   <div class="card" >
+
                      <div class="" >
                           <h5 id={{i}}>{{quote.quote}}</h5>
                                                  
                          <div>
-                             <div appHighlight> {{quote.description}} </div>
+                             <div> {{quote.description}} </div>
                              <div id="author">
                                  <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isUpVoted)='deleteQuote($event,i)'>
                                  </app-quote-detail>
-                              </div><br>
+                              </div>
       
                               <div>Quote Posted <span >{{ quote.postDate|dateCount }} days </span>Ago.
                               </div>
@@ -38,6 +41,7 @@
        </div>
    </div>
 </div>
+<hr>
 
 
 

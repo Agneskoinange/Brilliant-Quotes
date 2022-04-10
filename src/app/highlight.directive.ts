@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
@@ -6,16 +6,20 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 
 export class HighlightDirective {
 
-  constructor (private elem: ElementRef ) { 
+  constructor( elem:ElementRef) { 
+    elem.nativeElement.style.backgroundColor = "purple"
   }
-  
-    @HostListener("click") maxupvotes() {
-      this.quote_highlight("purple")
-    }
-  
-  
-    private quote_highlight(action:string){
-      this.elem.nativeElement.style.color=action;
-    }
 
+  // constructor (private elem: ElementRef ) { 
+  // }
+  
+  //   @HostListener("click") maxupvotes() {
+  //     this.quote_highlight("purple")
+  //   }
+  
+  
+  //   private quote_highlight(action:string){
+  //     this.elem.nativeElement.style.color=action;
+  //   }
+  
 }
