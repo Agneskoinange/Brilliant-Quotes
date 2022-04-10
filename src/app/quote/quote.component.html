@@ -21,11 +21,10 @@
                           </ng-template>
                                               
                           <div>
-                            
                              <div id="author">
                                  <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isUpVoted)='deleteQuote($event,i)'>
                                  </app-quote-detail>
-                              </div><br>
+                              </div>
       
                               <div>Quote Posted <span >{{ quote.postDate|dateCount }} days </span>Ago.
                               </div>

@@ -13,7 +13,7 @@ export class QuoteFormComponent implements OnInit {
 
   submitQuote() {
   this.addQuote.emit(this.newQuote);
-  alert('Nice Quote!')
+  alert('Your quote has been added to our list below!')
   }
   
 
